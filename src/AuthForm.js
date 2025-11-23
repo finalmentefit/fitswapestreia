@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth } from "./firebase"; // Importa o Firebase Auth
+import { auth } from "./firebase";
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
 const AuthForm = () => {
@@ -12,7 +12,6 @@ const AuthForm = () => {
 
     if (isLogin) {
       try {
-        // Realiza login com o Firebase Auth
         await signInWithEmailAndPassword(auth, email, password);
         alert("Login bem-sucedido!");
       } catch (error) {
@@ -20,7 +19,6 @@ const AuthForm = () => {
       }
     } else {
       try {
-        // Cria um novo usuário com o Firebase Auth
         await createUserWithEmailAndPassword(auth, email, password);
         alert("Conta criada com sucesso!");
       } catch (error) {
