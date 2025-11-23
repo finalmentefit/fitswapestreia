@@ -1,0 +1,1 @@
+export default function CreateChallenge(){return <div>CreateChallenge</div>}
