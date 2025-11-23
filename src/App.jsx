@@ -45,7 +45,6 @@ export default function App() {
     });
 
     return () => {
-      // unsubscribe
       try {
         listener?.subscription?.unsubscribe?.();
       } catch (e) {
@@ -69,8 +68,8 @@ export default function App() {
         <Route path="/create-post" element={<RequireAuth isAuth={Boolean(session)}><CreatePost /></RequireAuth>} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="*" element={<Navigate to={session ? "/home" : "/login"} replace />} />
-        <Route path="/medals" element={<RequireAuth isAuth={Boolean(session)}><Medals/></RequireAuth>} />
-        <Route path="/instructor-ai" element={<RequireAuth isAuth={Boolean(session)}><InstructorAI/></RequireAuth>} />
+        <Route path="/medals" element={<RequireAuth isAuth={Boolean(session)}><Medals /></RequireAuth>} />
+        <Route path="/instructor-ai" element={<RequireAuth isAuth={Boolean(session)}><InstructorAI /></RequireAuth>} />
       </Routes>
       <Toaster />
     </>
